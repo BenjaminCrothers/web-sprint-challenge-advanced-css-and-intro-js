@@ -253,7 +253,7 @@ function get20s(array){
   }
       return thCenturyArtists;
 }
-console.log(get20s(artists))
+get20s(artists)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -265,9 +265,11 @@ console.log(get20s(artists))
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
-}
+ function removeArtist(array,index){
+  array.splice(index,1);
+  return array.length;
+ }
+ removeArtist(artists,0);
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
