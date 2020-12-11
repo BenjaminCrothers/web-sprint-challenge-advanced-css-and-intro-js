@@ -213,7 +213,7 @@ console.log(artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-console.log(artist[2].bio);
+console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
@@ -248,15 +248,14 @@ function get20s(array){
   const thCenturyArtists=[];
   const splitYears=[];
     for(let i=0;i<array.length;i++){
-    // array[i].years.split([' - ']);
-    splitYears.push(array[i].years.split([' - ']));
+      var yearSplit = array[i].years.split(" - ");
+      var born = parseInt(yearSplit[0]);
+      var dead = parseInt(yearSplit[1]);
+      if(born>1899 && dead<2001){    
+        thCenturyArtists.push(array[i].name);
+      }
     }
-    for(let i=0;i<splitYears.length;i++){
-      if(splitYears[0]>1900&&[1]<1999)
-    thCenturyArtists.push(array[i].years;
-    }
-      return thCenturyArtists;
-      return splitYears;
+  return thCenturyArtists;
 }
 get20s(artists)
 
@@ -310,13 +309,14 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 function lotsOfArt(array){
   const artsy=[];
   for(let i=0;i<array.length;i++){
-    if(array[i].paintings>100){
-      artsy.push(array[i]);
+    let numOfPaint = array[i].paintings;
+    if(numOfPaint>100){
+      artsy.push(array[i].name);
     }
   }
   return artsy;
 }
-lotsOfArt(artists)
+var logger = lotsOfArt(artists);
 
 
 
